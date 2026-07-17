@@ -1,0 +1,8 @@
+Connectivity Verification Theory:
+
+
+How an EC2 instance in the Private Subnet can successfully reach the internet for updates.
+The private ec2 instance sends traffic to the private subnet's route table. The private route table checks the destination and the internet bound traffic one then forwards it to the NAT gateway. The NAT gateway then uses its elastic IP and sends the traffic through the Internet gateway to the internet. The response returns through the same path, allowing the private ec2 instance to access the Internet without having a public IP.
+
+Why an external user on the public internet cannot directly reach or access that private instance.
+Because the private instace is in a private subnet and also the private instance does not have a public IP or a elastic IP
